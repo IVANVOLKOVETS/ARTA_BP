@@ -11,6 +11,7 @@ module.exports = {
     filename: "index.[contenthash].js",
     path: path.resolve(__base, "dist"),
     clean: true,
+    assetModuleFilename: "assets/[name][ext]",
   },
 
   plugins: [

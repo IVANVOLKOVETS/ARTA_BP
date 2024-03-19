@@ -1,6 +1,93 @@
 @import "./normalize.css";
 
 body {
-    background-color: blanchedalmond;
-    user-select: none;
+  user-select: none;
+  background-repeat: no-repeat;
+}
+
+.banner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100dvh;
+  width: 100vw;
+}
+
+.banner__main {
+  display: flex;
+  width: 87.4vw;
+}
+
+.benefits {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.benefits > .benefits__item,
+.benefits__item > img {
+  width: 104px;
+  height: 136px;
+}
+
+.banner__main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.banner__title {
+  max-width: 272px;
+  text-align: center;
+  color: white;
+}
+/* .banner__background {
+  position: absolute;
+  z-index: -1;
+  height: 100dvh;
+} */
+
+/* .banner__background > img {
+  height: 100dvh;
+} */
+
+/* (-webkit-min-device-pixel-ratio: 2), */
+@media (min-resolution: 192dpi) {
+  .banner {
+    background-image: url("../img/Background-small@2x.png");
+    background-size: cover;
+  }
+}
+
+/* (-webkit-min-device-pixel-ratio: 3), */
+@media (min-resolution: 288dpi) {
+  .banner {
+    background-image: url("../img/Background-small@3x.png");
+    background-size: cover;
+  }
+}
+
+/* (-webkit-min-device-pixel-ratio: 2), */
+@media (min-height: 736px) and (min-resolution: 192dpi) {
+  .banner {
+    background-image: url("../img/Background-large@2x.png");
+    background-size: cover;
+  }
+}
+
+/* (-webkit-min-device-pixel-ratio: 3), */
+@media (min-height: 736px) and (min-resolution: 288dpi) {
+  .banner {
+    background-image: url("../img/Background-large@3x.png");
+    background-size: cover;
+  }
+}
+
+.banner__close-btn {
+  position: absolute;
+  top: 12px;
+  left: 24px;
+  width: 12px;
+  height: 12px;
 }
