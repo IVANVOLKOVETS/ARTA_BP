@@ -7,70 +7,131 @@
   </head>
   <body>
     <div class="banner">
-      <!-- <picture class="banner__background">
-        <source
-          media="(max-height: 736px)"
-          srcset="
-            img/Background-small@2x.png 2x,
-            img/Background-small@3x.png 3x
-          "
-        />
-        <source
-          media="(min-height: 737px)"
-          srcset="
-            img/Background-large@2x.png 2x,
-            img/Background-large@3x.png 3x
-          "
-        />
-        <img src="img/Background-small@2x.png" alt="Banner background" />
-      </picture> -->
-      <button class="banner__close-btn"></button>
-      <main class="banner__main">
-        <h1 class="banner__title">
-          Get Unlimited Access
-        </h1>
-        <section class="benefits">
-          <figure class="benefits__item">
-            <img src="img/f1@2x.png" alt="" srcset="img/f1@2x.png 2x, img/f1@3x.png 3x" />
-            <figcaption>Заголовок или описание к изображению</figcaption>
-          </figure>
-          <figure class="benefits__item">
-            <img src="img/f2@2x.png" alt="" srcset="img/f2@2x.png 2x, img/f2@3x.png 3x" />
-            <figcaption>Заголовок или описание к изображению</figcaption>
-          </figure>
-          <figure class="benefits__item">
-            <img src="img/f3@2x.png" alt="" srcset="img/f3@2x.png 2x, img/f3@3x.png 3x" />
-            <figcaption>Заголовок или описание к изображению</figcaption>
-          </figure>
-        </section>
-        <ul class="offers">
-          <li class="offers-item">
-            <a href="https://apple.com/" class="offers__link" target="_blank">
-              <span class="offers-item__description">
-                Yearly access
-                <span>Just $39.99 per year</span>
-              </span>
-              <span class="offers-item__price">$0.48 per week</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://google.com/" class="offers__link" target="_blank">
-              <span class="offers-item__description">Weekly access</span>
-              <span class="offers-item__price">$6.99 per week</span>
-            </a>
-          </li>
-        </ul>
-        <button type="button">Continue</button>
-      </main>
-      <footer class="footer">
-        <nav class="footer__nav">
-          <ul class="footer__links">
-            <li class="footer__link"><a href="#">Terms of Use</a></li>
-            <li class="footer__link"><a href="#">Privacy Policy</a></li>
-            <li class="footer__link"><a href="#">Restore</a></li>
-          </ul>
-        </nav>
-      </footer>
+      <button class="banner__close-btn">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="14"
+          height="14"
+          viewBox="0 0 14 14"
+          fill="none"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M7.01053 6.59968L12.4165 1.19368L12.8144 1.59155L7.4084 6.99754L13 12.5892L12.5892 13L6.99754 7.4084L1.59155 12.8144L1.19368 12.4165L6.59968 7.01053L1 1.41085L1.41085 1L7.01053 6.59968Z"
+            stroke="white"
+            stroke-opacity="0.4"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+      <div class="banner__content">
+        <main class="banner__main">
+          <h1 class="banner__title" i18n>Get Unlimited <br />Access</h1>
+          <section class="benefits">
+            <figure class="benefits-item">
+              <img
+                src="img/f1@2x.webp"
+                alt=""
+                srcset="img/f1@2x.webp 2x, img/f1@3x.webp 3x"
+              />
+              <figcaption class="benefits-item__title" i18n>
+                Unlimited Art <br />Creation
+              </figcaption>
+            </figure>
+            <figure class="benefits-item">
+              <img
+                src="img/f2@2x.webp"
+                alt=""
+                srcset="img/f2@2x.webp 2x, img/f2@3x.webp 3x"
+              />
+              <figcaption class="benefits-item__title" i18n>
+                Exclusive <br />Styles
+              </figcaption>
+            </figure>
+            <figure class="benefits-item">
+              <img
+                src="img/f3@2x.webp"
+                alt=""
+                srcset="img/f3@2x.webp 2x, img/f3@3x.webp 3x"
+              />
+              <figcaption class="benefits-item__title" i18n>
+                Magic Avatars <br />With 20% Off
+              </figcaption>
+            </figure>
+          </section>
+          <form class="banner__controls">
+            <ul class="offers">
+              <li class="offers-item offers-item_best">
+                <input
+                  class="offers-item__input"
+                  type="radio"
+                  id="radio1"
+                  name="radioGroup"
+                  value="https://apple.com/"
+                  checked
+                />
+                <label
+                  for="radio1"
+                  class="offers-item__link"
+                >
+                  <span class="offer-item__label" i18n> BEST OFFER </span>
+                  <span class="offers-item__description">
+                    <span class="offers-item__title" i18n>YEARLY ACCESS</span>
+                    <br />
+                    <span i18n="true" data-i18n='{"price": 39.99}'
+                      >Just {{price}} per year</span
+                    >
+                  </span>
+                  <span
+                    class="offers-item__price"
+                    i18n
+                    data-i18n='{"price": 0.48}'
+                    >{{price}} <br />per week</span
+                  >
+                </label>
+              </li>
+              <li>
+                <input
+                  class="offers-item__input"
+                  type="radio"
+                  id="radio2"
+                  name="radioGroup"
+                  value="https://google.com/"
+                />
+                <label
+                  for="radio2"
+                  class="offers-item__link"
+                >
+                  <span class="offers-item__description" i18n
+                    >WEEKLY ACCESS</span
+                  >
+                  <span
+                    class="offers-item__price"
+                    i18n
+                    data-i18n='{"price": 6.99}'
+                    >{{price}} <br />per week</span
+                  >
+                </label>
+              </li>
+            </ul>
+            <button id="redirectButton" class="banner__button" i18n>Continue</button>
+          </form>
+        </main>
+        <footer class="footer">
+          <nav class="footer__nav">
+            <ul class="footer__links">
+              <li class="footer__link">
+                <a href="#" i18n>Terms of Use</a>
+              </li>
+              <li class="footer__link">
+                <a href="#" i18n>Privacy Policy</a>
+              </li>
+              <li class="footer__link"><a href="#" i18n>Restore</a></li>
+            </ul>
+          </nav>
+        </footer>
+      </div>
     </div>
   </body>
 </html>

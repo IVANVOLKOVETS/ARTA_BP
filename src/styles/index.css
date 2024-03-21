@@ -1,4 +1,5 @@
 @import "./normalize.css";
+@import "./fonts.css";
 
 body {
   user-select: none;
@@ -12,11 +13,19 @@ body {
   align-items: center;
   height: 100dvh;
   width: 100vw;
+  justify-content: flex-end;
+}
+
+.banner__content {
+  width: 87.4vw;
+  padding-bottom: 8px;
 }
 
 .banner__main {
   display: flex;
-  width: 87.4vw;
+  gap: 40px;
+  flex-direction: column;
+  align-items: center;
 }
 
 .benefits {
@@ -25,68 +34,189 @@ body {
   width: 100%;
 }
 
-.benefits > .benefits__item,
-.benefits__item > img {
+.benefits-item {
+  position: relative;
+}
+
+.benefits > .benefits-item,
+.benefits-item > img {
   width: 104px;
   height: 136px;
 }
 
-.banner__main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.benefits-item__title {
+  position: absolute;
+  bottom: 10px;
+  left: 6px;
+  font-family: "SF-Pro", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+  color: white;
 }
 
 .banner__title {
+  margin: 0;
   max-width: 272px;
   text-align: center;
   color: white;
+  font-family: "SF-Pro", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 800;
+  font-size: 42px;
+  line-height: 46px;
 }
-/* .banner__background {
+
+.banner__controls {
+  width: 100%;
+}
+
+.offers {
+  width: 100%;
+}
+
+.offers-item:first-child {
+  margin-bottom: 8px;
+}
+
+.offers-item__link,
+.banner__button {
+  /* width: 100%; */
+  padding: 0 24px;
+  height: 56px;
+  background-color: #27232d;
+  border-radius: 28px;
+  color: #ffffff;
+  display: flex;
+  /* justify-content: space-around; */
+  justify-content: space-between;
+  align-items: center;
+  font-family: "SF-Pro-Display-Regular", -apple-system, BlinkMacSystemFont,
+    sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-decoration: none;
+  opacity: 1;
+}
+.offers-item__input {
+  display: none;
+}
+.offers-item__input:checked + label.offers-item__link {
+  background-color: rgb(102, 100, 107);
+  border: 1px solid #ffffff;
+}
+
+.offers-item__title {
+  text-transform: uppercase;
+  font-family: "SF-Pro-Display-Semibold", -apple-system, BlinkMacSystemFont,
+    sans-serif;
+  color: #ffffff;
+}
+
+.offers-item_best > .offers-item__link {
+  position: relative;
+}
+.offer-item__label {
   position: absolute;
-  z-index: -1;
-  height: 100dvh;
-} */
+  display: block;
+  text-align: center;
+  width: fit-content;
+  padding: 0 16px;
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  color: #141131;
+  background-color: #ffffff;
+  border-radius: 13px;
+  top: 0;
+  right: 20px;
+  transform: translateY(-50%);
+}
 
-/* .banner__background > img {
-  height: 100dvh;
-} */
+.banner__button {
+  width: 100%;
+  justify-content: center;
+  margin-top: 8px;
+  color: #070b33;
+  background-color: #ffffff;
+  border: none;
+  font-family: "SF-Pro", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+}
 
-/* (-webkit-min-device-pixel-ratio: 2), */
+.footer {
+  width: 100%;
+  margin-top: 24px;
+}
+
+.footer__links {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.footer__link > a {
+  font-family: "SF-Pro-Display-Regular", -apple-system, BlinkMacSystemFont,
+    sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #ffffff;
+  text-decoration: none;
+  opacity: 0.5;
+}
+
 @media (min-resolution: 192dpi) {
   .banner {
-    background-image: url("../img/Background-small@2x.png");
+    background-image: url("../img/Background-small@2x.webp");
     background-size: cover;
   }
 }
 
-/* (-webkit-min-device-pixel-ratio: 3), */
 @media (min-resolution: 288dpi) {
   .banner {
-    background-image: url("../img/Background-small@3x.png");
+    background-image: url("../img/Background-small@3x.webp");
     background-size: cover;
   }
 }
 
-/* (-webkit-min-device-pixel-ratio: 2), */
 @media (min-height: 736px) and (min-resolution: 192dpi) {
   .banner {
-    background-image: url("../img/Background-large@2x.png");
+    background-image: url("../img/Background-large@2x.webp");
     background-size: cover;
   }
 }
 
-/* (-webkit-min-device-pixel-ratio: 3), */
 @media (min-height: 736px) and (min-resolution: 288dpi) {
   .banner {
-    background-image: url("../img/Background-large@3x.png");
+    background-image: url("../img/Background-large@3x.webp");
     background-size: cover;
+  }
+}
+
+@media screen and (min-height: 736px) {
+  .banner__content {
+    padding-bottom: 30px;
+  }
+  .banner__button {
+    margin-top: 20px;
+  }
+  .footer {
+    margin-top: 48px;
+  }
+  .banner__main {
+    gap: 48px;
   }
 }
 
 .banner__close-btn {
+  display: block;
+  border: none;
+  background-color: transparent;
   position: absolute;
-  top: 12px;
+  top: 8dvh;
   left: 24px;
   width: 12px;
   height: 12px;
