@@ -64,7 +64,7 @@ function translateContent() {
     // console.log('i18nVariableNames', i18nVariableNames)
 
     console.log(el.innerHTML)
-    const trimmedElInnerHtml = el.innerHTML.trim();
+    const trimmedElInnerHtml = el.innerHTML.includes("  ") ? el.innerHTML.trim() : el.innerHTML;
     console.log('trimmedElInnerHtml', trimmedElInnerHtml)
 
     let translatedInnerHtml = translations[selectedLang][trimmedElInnerHtml];
