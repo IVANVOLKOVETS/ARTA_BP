@@ -38,12 +38,9 @@ function translateContent() {
   let selectedLang = "en";
 
   const queryString = window.location.search;
-  console.log('search',window.location.search)
   const urlParams = new URLSearchParams(queryString);
-  console.log('params',urlParams)
 
   const langFromQuery = urlParams.get("lang");
-  console.log('langFromQuery',langFromQuery)
 
   if (langFromQuery && allowedLanguages.includes(langFromQuery)) {
     selectedLang = langFromQuery;
@@ -59,17 +56,12 @@ function translateContent() {
   translatableElements.forEach((el) => {
     const i18nAttrData = JSON.parse(el.getAttribute("data-i18n"));
     const i18nAttrText = el.getAttribute("i18n")
-    // console.log('i18nAttrData', i18nAttrData)
 
     const i18nVariableNames = i18nAttrData && Object.keys(i18nAttrData);
-    // console.log('i18nVariableNames', i18nVariableNames)
 
-    console.log(el.innerHTML)
     const trimmedElInnerHtml =  i18nAttrText;
-    console.log('trimmedElInnerHtml', trimmedElInnerHtml)
 
     let translatedInnerHtml = translations[selectedLang][trimmedElInnerHtml];
-    console.log('translatedInnerHtml', translatedInnerHtml)
 
     if (i18nAttrData && i18nVariableNames?.length) {
       const replacedVars = i18nVariableNames.reduce((acc, variable, index) => {
@@ -83,7 +75,6 @@ function translateContent() {
           }).format(targetVarValue);
         }
         acc = acc.replace(`{{${variable}}}`, targetVarValue);
-        // console.log("accum", acc);
 
         if (index === i18nVariableNames.length - 1) {
           return acc;
@@ -94,7 +85,6 @@ function translateContent() {
     }
 
     el.innerHTML = translatedInnerHtml;
-    // console.log("translatedInnerHtml", translatedInnerHtml, "el.innerHTML", el.innerHTML )
   });
 }
 
