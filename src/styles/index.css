@@ -57,7 +57,7 @@ body {
 
 .banner__title {
   margin: 0;
-  max-width: 272px;
+  width: 100%;
   text-align: center;
   color: white;
   font-family: "SF-Pro", -apple-system, BlinkMacSystemFont, sans-serif;
@@ -72,12 +72,6 @@ body {
     line-height: 32px;
     font-weight: 600;
   }
-}
-
-.banner__title_small {
-  font-size: 28px;
-  line-height: 32px;
-  font-weight: 600;
 }
 
 .banner__controls {
