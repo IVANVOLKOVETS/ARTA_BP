@@ -68,6 +68,7 @@ function translateContent() {
     console.log('trimmedElInnerHtml', trimmedElInnerHtml)
 
     let translatedInnerHtml = translations[selectedLang][trimmedElInnerHtml];
+    console.log('translatedInnerHtml', translatedInnerHtml)
 
     if (i18nAttrData && i18nVariableNames?.length) {
       const replacedVars = i18nVariableNames.reduce((acc, variable, index) => {
