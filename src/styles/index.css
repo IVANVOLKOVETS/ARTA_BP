@@ -18,6 +18,7 @@ body {
 
 .banner__content {
   width: 87.4vw;
+  max-width: 430px;
   padding-bottom: 8px;
 }
 
