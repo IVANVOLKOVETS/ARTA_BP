@@ -7,7 +7,7 @@ import ja from "./i18n/ja.json";
 import pt from "./i18n/pt.json";
 
 const allowedLanguages = ["de", "en", "es", "fr", "ja", "pt"];
-const shrinkedHeaderLanguages = ["de", "fr", "pt", "ja"]
+// const shrinkedHeaderLanguages = ["de", "fr", "pt", "ja"]
 const translations = {
   de,
   en,
@@ -35,14 +35,14 @@ const currencies = {
   pt: "BRL",
 };
 
-function checkDeFrPt(selectedLang) {
-  const isLessThan736px = window.innerHeight < 630;
-  console.log(window.innerHeight)
-  if (isLessThan736px && shrinkedHeaderLanguages.includes(selectedLang) ) {
-    const h1 = document.querySelector("h1.banner__title")
-    h1.classList.add("banner__title_small")
-  }
-}
+// function checkDeFrPt(selectedLang) {
+//   const isLessThan736px = window.innerHeight < 630;
+//   console.log(window.innerHeight)
+//   if (isLessThan736px && shrinkedHeaderLanguages.includes(selectedLang) ) {
+//     const h1 = document.querySelector("h1.banner__title")
+//     h1.classList.add("banner__title_small")
+//   }
+// }
 
 function translateContent() {
   let selectedLang = "en";
@@ -94,7 +94,7 @@ function translateContent() {
       translatedInnerHtml = replacedVars;
     }
 
-    checkDeFrPt(selectedLang)
+    // checkDeFrPt(selectedLang)
     el.innerHTML = translatedInnerHtml;
   });
 }

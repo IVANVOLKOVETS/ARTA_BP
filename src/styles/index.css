@@ -66,6 +66,14 @@ body {
   line-height: 46px;
 }
 
+@media (max-height: 630px){
+  .banner__title {
+    font-size: 28px;
+    line-height: 32px;
+    font-weight: 600;
+  }
+}
+
 .banner__title_small {
   font-size: 28px;
   line-height: 32px;
