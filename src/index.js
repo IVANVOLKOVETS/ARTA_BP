@@ -58,13 +58,14 @@ function translateContent() {
 
   translatableElements.forEach((el) => {
     const i18nAttrData = JSON.parse(el.getAttribute("data-i18n"));
+    const i18nAttrText = el.getAttribute("i18n")
     // console.log('i18nAttrData', i18nAttrData)
 
     const i18nVariableNames = i18nAttrData && Object.keys(i18nAttrData);
     // console.log('i18nVariableNames', i18nVariableNames)
 
     console.log(el.innerHTML)
-    const trimmedElInnerHtml =  el.innerHTML;
+    const trimmedElInnerHtml =  i18nAttrText;
     console.log('trimmedElInnerHtml', trimmedElInnerHtml)
 
     let translatedInnerHtml = translations[selectedLang][trimmedElInnerHtml];
