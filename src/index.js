@@ -38,12 +38,12 @@ function translateContent() {
   let selectedLang = "en";
 
   const queryString = window.location.search;
-  console.log(window.location.search)
+  console.log('search',window.location.search)
   const urlParams = new URLSearchParams(queryString);
-  console.log(urlParams)
+  console.log('params',urlParams)
 
   const langFromQuery = urlParams.get("lang");
-  console.log(langFromQuery)
+  console.log('langFromQuery',langFromQuery)
 
   if (langFromQuery && allowedLanguages.includes(langFromQuery)) {
     selectedLang = langFromQuery;
@@ -55,15 +55,16 @@ function translateContent() {
   }
 
   const translatableElements = document.querySelectorAll("[i18n]");
-  const translatableAfterPseudoElements =
-    document.querySelectorAll("[i18n-after]");
 
   translatableElements.forEach((el) => {
     const i18nAttrData = JSON.parse(el.getAttribute("data-i18n"));
+    console.log('i18nAttrData', i18nAttrData)
 
     const i18nVariableNames = i18nAttrData && Object.keys(i18nAttrData);
+    console.log('i18nVariableNames', i18nVariableNames)
 
     const trimmedElInnerHtml = el.innerHTML.trim();
+    console.log('trimmedElInnerHtml', trimmedElInnerHtml)
 
     let translatedInnerHtml = translations[selectedLang][trimmedElInnerHtml];
 
