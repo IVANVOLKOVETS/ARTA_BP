@@ -7,7 +7,7 @@ import ja from "./i18n/ja.json";
 import pt from "./i18n/pt.json";
 
 const allowedLanguages = ["de", "en", "es", "fr", "ja", "pt"];
-const shrinkedHeaderLanguages = ["de", "fr", "pt"]
+const shrinkedHeaderLanguages = ["de", "fr", "pt", "ja"]
 const translations = {
   de,
   en,
