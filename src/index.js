@@ -58,11 +58,12 @@ function translateContent() {
 
   translatableElements.forEach((el) => {
     const i18nAttrData = JSON.parse(el.getAttribute("data-i18n"));
-    console.log('i18nAttrData', i18nAttrData)
+    // console.log('i18nAttrData', i18nAttrData)
 
     const i18nVariableNames = i18nAttrData && Object.keys(i18nAttrData);
-    console.log('i18nVariableNames', i18nVariableNames)
+    // console.log('i18nVariableNames', i18nVariableNames)
 
+    console.log(el.innerHTML)
     const trimmedElInnerHtml = el.innerHTML.trim();
     console.log('trimmedElInnerHtml', trimmedElInnerHtml)
 
@@ -80,7 +81,7 @@ function translateContent() {
           }).format(targetVarValue);
         }
         acc = acc.replace(`{{${variable}}}`, targetVarValue);
-        console.log("accum", acc);
+        // console.log("accum", acc);
 
         if (index === i18nVariableNames.length - 1) {
           return acc;
@@ -91,7 +92,7 @@ function translateContent() {
     }
 
     el.innerHTML = translatedInnerHtml;
-    console.log("translatedInnerHtml", translatedInnerHtml, "el.innerHTML", el.innerHTML )
+    // console.log("translatedInnerHtml", translatedInnerHtml, "el.innerHTML", el.innerHTML )
   });
 }
 
