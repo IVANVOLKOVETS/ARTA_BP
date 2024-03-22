@@ -91,6 +91,7 @@ function translateContent() {
     }
 
     el.innerHTML = translatedInnerHtml;
+    console.log("translatedInnerHtml", translatedInnerHtml, "el.innerHTML", el.innerHTML )
   });
 }
 
