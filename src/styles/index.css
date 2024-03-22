@@ -62,8 +62,14 @@ body {
   color: white;
   font-family: "SF-Pro", -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 800;
-  font-size: 6dvh;
+  font-size: 40px;
   line-height: 46px;
+}
+
+.banner__title_small {
+  font-size: 28px;
+  line-height: 32px;
+  font-weight: 600;
 }
 
 .banner__controls {

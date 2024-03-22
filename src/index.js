@@ -7,6 +7,7 @@ import ja from "./i18n/ja.json";
 import pt from "./i18n/pt.json";
 
 const allowedLanguages = ["de", "en", "es", "fr", "ja", "pt"];
+const shrinkedHeaderLanguages = ["de", "fr", "pt"]
 const translations = {
   de,
   en,
@@ -34,6 +35,15 @@ const currencies = {
   pt: "BRL",
 };
 
+function checkDeFrPt(selectedLang) {
+  const isLessThan736px = window.innerHeight < 630;
+  console.log(window.innerHeight)
+  if (isLessThan736px && shrinkedHeaderLanguages.includes(selectedLang) ) {
+    const h1 = document.querySelector("h1.banner__title")
+    h1.classList.add("banner__title_small")
+  }
+}
+
 function translateContent() {
   let selectedLang = "en";
 
@@ -55,11 +65,11 @@ function translateContent() {
 
   translatableElements.forEach((el) => {
     const i18nAttrData = JSON.parse(el.getAttribute("data-i18n"));
-    const i18nAttrText = el.getAttribute("i18n")
+    const i18nAttrText = el.getAttribute("i18n");
 
     const i18nVariableNames = i18nAttrData && Object.keys(i18nAttrData);
 
-    const trimmedElInnerHtml =  i18nAttrText;
+    const trimmedElInnerHtml = i18nAttrText;
 
     let translatedInnerHtml = translations[selectedLang][trimmedElInnerHtml];
 
@@ -84,6 +94,7 @@ function translateContent() {
       translatedInnerHtml = replacedVars;
     }
 
+    checkDeFrPt(selectedLang)
     el.innerHTML = translatedInnerHtml;
   });
 }
